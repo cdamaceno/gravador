@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt_BR">
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Gravador de telas">
+  <meta name="apple-mobile-web-app-title" content="Gravador de telas">
+  <meta name="theme-color" content="#e84c3d">
+  <meta name="msapplication-navbutton-color" content="#e84c3d">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="index.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logo.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="assets/logo.png">
+
+  <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+  <title>Gravador de telas</title>
+  <style>
+    .navbar {
+      background-color: #e84c3d
+    }
+
+    .navbar-brand img {
+      vertical-align: text-top
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark">
+    <a class="navbar-brand">
+      Gravador de telas
+    </a>
+  </nav>
+
+  <div class="container">
+
+    <div id="erro" class="alert alert-danger d-none mt-3" role="alert">
+      Seu navegador não possui o suporte necessário para essa ferramenta funcionar.
+    </div>
+    <div id="bloqueadorpopup" class="alert alert-danger d-none mt-3" role="alert">
+      Verifique o bloqueador de popups.
+    </div>
+
+    <div class="row justify-content-md-center mt-3">
+      <div class="col-lg-8">
+        <div class="embed-responsive embed-responsive-16by9">
+          <video id="preview" class="embed-responsive-item border" poster="assets/logo.svg"></video>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center mt-3">
+      <button id="startCapture" type="button" class="btn btn-info m-1">Selecionar</button>
+      <button id="startRecord" disabled type="button" class="btn btn-success m-1">Iniciar gravação</button>
+      <button id="stopRecord" disabled type="button" class="btn btn-danger m-1">Parar gravação</button>
+      <a id="download" class="btn btn-primary disabled m-1">Download</a>
+    </div>
+    <div class="row justify-content-md-center mt-3">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="audioDesktop">
+        <label class="form-check-label" for="audioDesktop">Capturar áudio da tela</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="audioMic">
+        <label class="form-check-label" for="audioMic">Capturar áudio do microfone</label>
+      </div>
+    </div>
+    <div id="tipAudio" class="row justify-content-md-center mt-1 d-none">
+      <small class="form-text text-muted alert alert-warning" role="alert">
+        Não esqueça de assinalar a opção de compartilhar o áudio ao iniciar a captura.
+      </small>
+    </div>
+
+    <div class="row mt-3 h3 justify-content-md-center">
+      Mosaicos
+    </div>
+    <div class="row mt-3 mb-3 justify-content-md-center">
+      <a class="popup" href="mosaicos/gdocs-presentation.html" target="_blank">Apresentação do Google + Câmera</a>
+    </div>
+  </div>
+
+  <script src="libs/jquery/jquery-3.5.1.slim.min.js"></script>
+  <script src="functions.js"></script>
+</body>
+
+</html>
